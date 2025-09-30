@@ -1,0 +1,11 @@
+<suite name="ETHVault Suite">
+    <test name="UI Tests">
+        <classes>
+            <class name="tests.DashboardTests"/>
+            <class name="tests.DepositTests"/>
+            <class name="tests.ResponsiveLayoutTests"/>
+            <class name="tests.NavigationTests"/>
+            <class name="tests.EdgeCaseTests"/>
+        </classes>
+    </test>
+</suite>

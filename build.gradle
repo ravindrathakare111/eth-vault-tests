@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.ethvault'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    seleniumVersion = '4.25.0'
+    testngVersion   = '7.10.2'
+    wdmVersion      = '5.9.2'
+}
+
+dependencies {
+    // Selenium
+    implementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+
+    // TestNG
+    testImplementation "org.testng:testng:${testngVersion}"
+
+    // WebDriverManager
+    implementation "io.github.bonigarcia:webdrivermanager:${wdmVersion}"
+}
+
+test {
+    useTestNG {
+        suites 'testng.xml'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
